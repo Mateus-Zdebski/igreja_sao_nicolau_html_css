@@ -1,0 +1,94 @@
+.hero {
+    position: relative;
+    background: url('imagens/comunnitys/Igreja.jpg') no-repeat center center;
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.swiper {
+  width: 100%;
+  height: auto;
+  padding-bottom: 50px; /* Garante espaço para os controles */
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide .card-img-top {
+  width: 100%; /* Ocupa toda a largura do card */
+  height: 192px; /* Mantém a altura do card */
+  object-fit: contain; /* Garante que a imagem fique dentro sem cortes */
+  background-color: #fff; /* Fundo branco para preencher espaços vazios */
+}
+
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 90%; /* Diminui o tamanho do card */
+  margin: 0 auto; /* Centraliza os cartões */
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.carousel-item img {
+  width: 100%; /* Ocupa toda a largura disponível */
+  height: 300px; /* Mantém altura fixa */
+  object-fit: contain; /* Garante que a imagem se ajuste sem cortes */
+  background-color: #fff; /* Define fundo branco para evitar espaços vazios visíveis */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: blue; /* Cor azul */
+  border-radius: 50%; /* Deixa o ícone circular */
+  padding: 10px; /* Dá um espaçamento interno */
+  opacity: 0.8; /* Torna levemente transparente */
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  opacity: 1; /* Remove a transparência ao passar o mouse */
+}
+
+.navbar-brand {
+  font-size: 16px; /* Diminui o tamanho do texto */
+  font-weight: bold;
+  white-space: nowrap; /* Evita que quebre */
+  text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+  max-width: 200px; /* Define um tamanho máximo */
+}
+
+/* Em telas menores (até 576px), reduz ainda mais o tamanho */
+@media (max-width: 576px) {
+  .navbar-brand {
+      font-size: 14px;
+      max-width: 150px; /* Ajusta a largura máxima */
+      overflow: hidden; /* Evita que transborde */
+
+  }
+}
