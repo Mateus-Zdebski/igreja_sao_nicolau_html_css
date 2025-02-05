@@ -47,6 +47,7 @@
 .card {
   width: 90%; /* Diminui o tamanho do card */
   margin: 0 auto; /* Centraliza os cartões */
+  border: none;
 }
 
 h2 {
@@ -58,6 +59,7 @@ h2 {
   width: 100%; /* Ocupa toda a largura disponível */
   height: 300px; /* Mantém altura fixa */
   object-fit: contain; /* Garante que a imagem se ajuste sem cortes */
+  background-color: #fff; /* Define fundo branco para evitar espaços vazios visíveis */
 }
 
 .carousel-control-prev-icon,
