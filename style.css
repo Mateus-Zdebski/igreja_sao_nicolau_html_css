@@ -1,497 +1,587 @@
  :root {
-            --primary-color: #0057B7; /* Azul ucraniano */
-            --secondary-color: #FFD700; /* Amarelo ucraniano */
-            --dark-color: #1a1a2e;
-            --light-color: #f8f9fa;
-            --accent-color: #e63946;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--dark-color);
-            overflow-x: hidden;
-            background-color: #f5f5f5;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary-color);
-        }
-        
-        .navbar {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .navbar-brand {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            color: var(--primary-color) !important;
-            font-size: 1.8rem;
-        }
-        
-        .nav-link {
-            color: var(--dark-color) !important;
-            font-weight: 500;
-            margin: 0 10px;
-            position: relative;
-        }
-        
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--secondary-color);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover:after {
-            width: 100%;
-        }
-        
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imagens/isn/Imagem\ do\ WhatsApp\ de\ 2025-06-26\ à\(s\)\ 12.52.31_c4b80664.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            color: white;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-        }
-        
-        .hero-title {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        
-        .hero-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            background-color: transparent;
-            border-color: white;
-            transform: translateY(-3px);
-        }
-        
-        .btn-secondary {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
-            color: var(--dark-color);
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-secondary:hover {
-            background-color: transparent;
-            border-color: var(--secondary-color);
-            color: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-        
-        .section-title {
-            position: relative;
-            margin-bottom: 50px;
-            text-align: center;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 3px;
-            background-color: var(--secondary-color);
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .about-section {
-            padding: 100px 0;
-            background-color: white;
-        }
-        
-        .priest-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-        }
-        
-        .priest-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .priest-img {
-            height: 300px;
-            overflow: hidden;
-        }
-        
-        .priest-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .priest-card:hover .priest-img img {
-            transform: scale(1.1);
-        }
-        
-        .priest-info {
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .priest-name {
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-        }
-        
-        .priest-role {
-            color: var(--secondary-color);
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-        
-        .community-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-        }
-        
-        .community-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .community-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .community-info {
-            padding: 20px;
-        }
-        
-        .community-name {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        
-        .donor-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin-bottom: 30px;
-            height: 100%;
-        }
-        
-        .donor-icon {
-            font-size: 3rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-        
-        .donor-name {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        
-        .mass-times {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 50px 0;
-        }
-        
-        .mass-times .section-title {
-            color: white;
-        }
-        
-        .mass-times .section-title:after {
-            background-color: var(--secondary-color);
-        }
-        
-        .mass-time-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .mass-time-card:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-5px);
-        }
-        
-        .mass-day {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--secondary-color);
-        }
-        
-        .mass-hours {
-            font-size: 1.2rem;
-        }
-        
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 70px 0 20px;
-        }
-        
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 2rem;
-            color: white;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-        
-        .footer-links h4 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-        }
-        
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--secondary-color);
-            padding-left: 5px;
-        }
-        
-        .social-icons a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #1a1a2e;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            margin-right: 10px;
-            transition: all 0.3s ease;
-        }
-        
-    
-        
-        .copyright {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-            margin-top: 50px;
-            text-align: center;
-        }
-        
-        .owl-carousel .owl-item img {
-            width: auto;
-            display: inline-block;
-        }
-        
-        .owl-nav {
-            text-align: center;
-            margin-top: 20px;
-        }
-        
-        .owl-nav button {
-            background-color: var(--primary-color) !important;
-            color: white !important;
-            width: 40px;
-            height: 40px;
-            border-radius: 50% !important;
-            margin: 0 10px;
-            transition: all 0.3s ease;
-        }
-        
-        .owl-nav button:hover {
-            background-color: var(--secondary-color) !important;
-            color: var(--dark-color) !important;
-        }
-        
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-            
-            .navbar-brand {
-                font-size: 1.5rem;
-            }
-        }
-    /* História Page Styles */
-.history-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+     --primary-color: #0057B7;
+     /* Azul ucraniano */
+     --secondary-color: #FFD700;
+     /* Amarelo ucraniano */
+     --dark-color: #1a1a2e;
+     --light-color: #f8f9fa;
+     --accent-color: #e63946;
+ }
 
-.history-block {
-    margin-bottom: 80px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
+ body {
+     font-family: 'Poppins', sans-serif;
+     color: var(--dark-color);
+     overflow-x: hidden;
+     background-color: #f5f5f5;
+ }
 
-.history-block:last-child {
-    border-bottom: none;
-}
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+     font-family: 'Playfair Display', serif;
+     color: var(--primary-color);
+ }
 
-.history-block h3 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-}
+ .navbar {
+     background-color: white;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+ }
 
-.history-block p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
+ .navbar-brand {
+     font-family: 'Playfair Display', serif;
+     font-weight: 700;
+     color: var(--primary-color) !important;
+     font-size: 1.8rem;
+ }
 
-.history-conclusion {
-    background-color: rgba(0, 87, 183, 0.05);
-    padding: 40px;
-    border-radius: 10px;
-    margin-top: 60px;
-}
+ .nav-link {
+     color: var(--dark-color) !important;
+     font-weight: 500;
+     margin: 0 10px;
+     position: relative;
+ }
 
-.history-conclusion h3 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
+ .nav-link:after {
+     content: '';
+     position: absolute;
+     width: 0;
+     height: 2px;
+     bottom: 0;
+     left: 0;
+     background-color: var(--secondary-color);
+     transition: width 0.3s ease;
+ }
 
-.history-conclusion p {
-    font-size: 1.2rem;
-}
+ .nav-link:hover:after {
+     width: 100%;
+ }
 
-/* Owl Carousel Adjustments */
-.owl-carousel .item img {
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
+ .hero-section {
+     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imagens/isn/Imagem\ do\ WhatsApp\ de\ 2025-06-26\ à\(s\)\ 12.52.31_c4b80664.jpg');
+     background-size: cover;
+     background-position: center;
+     height: 80vh;
+     display: flex;
+     align-items: center;
+     color: white;
+ }
 
-.owl-nav {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
+ .hero-content {
+     max-width: 800px;
+ }
 
-.owl-prev, .owl-next {
-    background-color: var(--primary-color) !important;
-    color: white !important;
-    width: 40px;
-    height: 40px;
-    border-radius: 50% !important;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-}
+ .hero-title {
+     font-size: 3.5rem;
+     margin-bottom: 20px;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+ }
 
-.owl-prev {
-    margin-left: -20px;
-}
+ .hero-subtitle {
+     font-size: 1.2rem;
+     margin-bottom: 30px;
+ }
 
-.owl-next {
-    margin-right: -20px;
-}
+ .btn-primary {
+     background-color: var(--primary-color);
+     border-color: var(--primary-color);
+     padding: 10px 25px;
+     border-radius: 30px;
+     font-weight: 500;
+     transition: all 0.3s ease;
+ }
 
-@media (max-width: 768px) {
-    .history-block {
-        margin-bottom: 50px;
-        padding-bottom: 30px;
-    }
-    
-    .history-block h3 {
-        font-size: 1.5rem;
-    }
-    
-    .history-conclusion {
-        padding: 20px;
-    }
-}
+ .btn-primary:hover {
+     background-color: transparent;
+     border-color: white;
+     transform: translateY(-3px);
+ }
 
-/* Estilos corrigidos para os carrosséis */
-.carousel-inner {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
+ .btn-secondary {
+     background-color: var(--secondary-color);
+     border-color: var(--secondary-color);
+     color: var(--dark-color);
+     padding: 10px 25px;
+     border-radius: 30px;
+     font-weight: 500;
+     transition: all 0.3s ease;
+ }
 
-.carousel-item {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
+ .btn-secondary:hover {
+     background-color: transparent;
+     border-color: var(--secondary-color);
+     color: var(--secondary-color);
+     transform: translateY(-3px);
+ }
 
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 12px;
-}
+ .section-title {
+     position: relative;
+     margin-bottom: 50px;
+     text-align: center;
+ }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .carousel-inner {
-        height: 300px;
-    }
-}
+ .section-title:after {
+     content: '';
+     position: absolute;
+     width: 80px;
+     height: 3px;
+     background-color: var(--secondary-color);
+     bottom: -15px;
+     left: 50%;
+     transform: translateX(-50%);
+ }
 
-@media (max-width: 576px) {
-    .carousel-inner {
-        height: 250px;
-    }
-}
+ .about-section {
+     padding: 100px 0;
+     background-color: white;
+ }
+
+ .priest-card {
+     background-color: white;
+     border-radius: 10px;
+     overflow: hidden;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+     transition: all 0.3s ease;
+     margin-bottom: 30px;
+ }
+
+ .priest-card:hover {
+     transform: translateY(-10px);
+     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+ }
+
+ .priest-img {
+     height: 250px;
+     /* Altura reduzida para melhor ajuste */
+     overflow: hidden;
+     display: flex;
+     /* Para centralizar a imagem com object-fit: contain */
+     align-items: center;
+     /* Para centralizar a imagem com object-fit: contain */
+     justify-content: center;
+     /* Para centralizar a imagem com object-fit: contain */
+     background-color: #f0f0f0;
+     /* Cor de fundo caso a imagem não preencha tudo */
+ }
+
+ .priest-img img {
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+     /* Imagem inteira visível, mantendo proporção */
+     transition: transform 0.5s ease;
+ }
+
+ .priest-card:hover .priest-img img {
+     transform: scale(1.05);
+     /* Reduzido o efeito de zoom para contain */
+ }
+
+ .priest-info {
+     padding: 20px;
+     text-align: center;
+ }
+
+ .priest-name {
+     font-size: 1.5rem;
+     margin-bottom: 5px;
+ }
+
+ .priest-role {
+     color: var(--secondary-color);
+     font-weight: 500;
+     margin-bottom: 15px;
+ }
+
+ .community-card {
+     background-color: white;
+     border-radius: 10px;
+     overflow: hidden;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+     transition: all 0.3s ease;
+     margin-bottom: 30px;
+ }
+
+ .community-img {
+     height: 180px;
+     /* Altura reduzida para melhor ajuste */
+     overflow: hidden;
+     display: flex;
+     /* Para centralizar a imagem com object-fit: contain */
+     align-items: center;
+     /* Para centralizar a imagem com object-fit: contain */
+     justify-content: center;
+     /* Para centralizar a imagem com object-fit: contain */
+     background-color: #f0f0f0;
+     /* Cor de fundo caso a imagem não preencha tudo */
+ }
+
+ .community-img img {
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+     /* Imagem inteira visível, mantendo proporção */
+ }
+
+ .community-info {
+     padding: 20px;
+ }
+
+ .community-name {
+     font-size: 1.3rem;
+     margin-bottom: 10px;
+ }
+
+ .donor-card {
+     background-color: white;
+     border-radius: 10px;
+     padding: 30px;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+     text-align: center;
+     margin-bottom: 30px;
+     height: 100%;
+ }
+
+ .donor-icon {
+     font-size: 3rem;
+     color: var(--secondary-color);
+     margin-bottom: 20px;
+ }
+
+ .donor-name {
+     font-size: 1.3rem;
+     margin-bottom: 10px;
+ }
+
+ .mass-times {
+     background-color: var(--primary-color);
+     color: white;
+     padding: 50px 0;
+ }
+
+ .mass-times .section-title {
+     color: white;
+ }
+
+ .mass-times .section-title:after {
+     background-color: var(--secondary-color);
+ }
+
+ .mass-time-card {
+     background-color: rgba(255, 255, 255, 0.1);
+     border-radius: 10px;
+     padding: 30px;
+     text-align: center;
+     margin-bottom: 30px;
+     transition: all 0.3s ease;
+ }
+
+ .mass-time-card:hover {
+     background-color: rgba(255, 255, 255, 0.2);
+     transform: translateY(-5px);
+ }
+
+ .mass-day {
+     font-size: 1.5rem;
+     margin-bottom: 15px;
+     color: var(--secondary-color);
+ }
+
+ .mass-hours {
+     font-size: 1.2rem;
+ }
+
+ footer {
+     background-color: var(--dark-color);
+     color: white;
+     padding: 70px 0 20px;
+ }
+
+ .footer-logo {
+     font-family: 'Playfair Display', serif;
+     font-weight: 700;
+     font-size: 2rem;
+     color: white;
+     margin-bottom: 20px;
+     display: inline-block;
+ }
+
+ .footer-links h4 {
+     color: var(--secondary-color);
+     margin-bottom: 20px;
+     font-size: 1.3rem;
+ }
+
+ .footer-links ul {
+     list-style: none;
+     padding: 0;
+ }
+
+ .footer-links li {
+     margin-bottom: 10px;
+ }
+
+ .footer-links a {
+     color: white;
+     text-decoration: none;
+     transition: all 0.3s ease;
+ }
+
+ .footer-links a:hover {
+     color: var(--secondary-color);
+     padding-left: 5px;
+ }
+
+ .social-icons a {
+     display: inline-block;
+     width: 40px;
+     height: 40px;
+     background-color: rgba(255, 255, 255, 0.1);
+     color: #1a1a2e;
+     border-radius: 50%;
+     text-align: center;
+     line-height: 40px;
+     margin-right: 10px;
+     transition: all 0.3s ease;
+ }
+
+
+
+ .copyright {
+     border-top: 1px solid rgba(255, 255, 255, 0.1);
+     padding-top: 20px;
+     margin-top: 50px;
+     text-align: center;
+ }
+
+ /* Owl Carousel - Ajustes gerais */
+ .owl-carousel {
+     position: relative;
+ }
+
+ .owl-stage-outer {
+     padding: 10px 0;
+     /* Espaço para os cards não serem cortados */
+ }
+
+ /* Cards - Ajuste de tamanho */
+ .priest-card,
+ .community-card {
+     width: 100%;
+     margin: 0 auto;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ /* Ajuste para telas pequenas */
+ @media (max-width: 767px) {
+     .owl-stage-outer {
+         padding: 10px 20px;
+         /* Mais espaço nas laterais para mobile */
+     }
+
+     .owl-item {
+         padding: 0 5px;
+         /* Espaço entre os cards */
+     }
+ }
+
+ /* Ajuste para telas médias/grandes */
+ @media (min-width: 768px) {
+     .owl-item {
+         padding: 0 15px;
+         /* Espaço entre os cards */
+     }
+ }
+
+
+
+ .owl-nav {
+     text-align: center;
+     margin-top: 20px;
+ }
+
+ .owl-nav button {
+     background-color: var(--primary-color) !important;
+     color: white !important;
+     width: 40px;
+     height: 40px;
+     border-radius: 50% !important;
+     margin: 0 10px;
+     transition: all 0.3s ease;
+ }
+
+ .owl-nav button:hover {
+     background-color: var(--secondary-color) !important;
+     color: var(--dark-color) !important;
+ }
+
+ @media (max-width: 768px) {
+     .hero-title {
+         font-size: 2.5rem;
+     }
+
+     .hero-subtitle {
+         font-size: 1rem;
+     }
+
+     .navbar-brand {
+         font-size: 1.5rem;
+     }
+ }
+
+ /* História Page Styles */
+ .history-content {
+     max-width: 1200px;
+     margin: 0 auto;
+ }
+
+ .history-block {
+     margin-bottom: 80px;
+     padding-bottom: 40px;
+     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+ }
+
+ .history-block:last-child {
+     border-bottom: none;
+ }
+
+ .history-block h3 {
+     color: var(--primary-color);
+     margin-bottom: 20px;
+     font-size: 1.8rem;
+ }
+
+ .history-block p {
+     font-size: 1.1rem;
+     line-height: 1.8;
+     margin-bottom: 20px;
+ }
+
+ .history-conclusion {
+     background-color: rgba(0, 87, 183, 0.05);
+     padding: 40px;
+     border-radius: 10px;
+     margin-top: 60px;
+ }
+
+ .history-conclusion h3 {
+     color: var(--primary-color);
+     margin-bottom: 20px;
+ }
+
+ .history-conclusion p {
+     font-size: 1.2rem;
+ }
+
+ /* Owl Carousel Adjustments */
+ .owl-carousel .item img {
+     border-radius: 8px;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+ }
+
+ .owl-nav {
+     position: absolute;
+     top: 50%;
+     left: 0;
+     /* Faz o .owl-nav ocupar toda a largura */
+     right: 0;
+     /* Faz o .owl-nav ocupar toda a largura */
+     transform: translateY(-50%);
+     padding: 0 5px;
+     /* Pequeno padding para não colar os botões nas bordas extremas */
+     box-sizing: border-box;
+     pointer-events: none;
+     /* Para o .owl-nav não interferir com cliques nos itens abaixo */
+ }
+
+ .owl-prev,
+ .owl-next {
+     background-color: var(--primary-color) !important;
+     color: white !important;
+     width: 40px;
+     height: 40px;
+     border-radius: 50% !important;
+     display: flex !important;
+     align-items: center;
+     justify-content: center;
+     position: absolute;
+     /* Posicionamento absoluto dentro do .owl-nav */
+     top: 0;
+     /* Alinhado ao topo do .owl-nav (que já está centralizado verticalmente) */
+     pointer-events: auto;
+     /* Habilitar cliques nos botões */
+     z-index: 10;
+     /* Para garantir que fiquem acima dos itens do carrossel */
+ }
+
+ .owl-prev {
+     left: 5px;
+     /* Distância da borda esquerda do .owl-nav */
+ }
+
+ .owl-next {
+     right: 5px;
+     /* Distância da borda direita do .owl-nav */
+ }
+
+ /* A media query @media (max-width: 767.98px) para .owl-nav, .owl-prev, .owl-next foi removida
+   pois a configuração acima já deve ser suficientemente responsiva para telas pequenas.
+   Se precisar de ajustes específicos para telas menores, ela pode ser reintroduzida. */
+
+ @media (max-width: 768px) {
+     .history-block {
+         margin-bottom: 50px;
+         padding-bottom: 30px;
+     }
+
+     .history-block h3 {
+         font-size: 1.5rem;
+     }
+
+     .history-conclusion {
+         padding: 20px;
+     }
+ }
+
+ /* Estilos corrigidos para os carrosséis */
+ .carousel-inner {
+     position: relative;
+     width: 100%;
+     height: 400px;
+     /* Mantido para consistência, mas pode ser ajustado */
+     max-height: 500px;
+     /* Adicionado max-height */
+     overflow: hidden;
+     border-radius: 12px;
+     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+ }
+
+ .carousel-item {
+     position: relative;
+     width: 100%;
+     height: 100%;
+ }
+
+ .carousel-item img {
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+     /* Alterado de cover para contain */
+     object-position: center;
+     border-radius: 12px;
+ }
+
+ /* Responsividade */
+ @media (max-width: 768px) {
+     .carousel-inner {
+         height: 300px;
+     }
+ }
+
+ @media (max-width: 576px) {
+     .carousel-inner {
+         height: 250px;
+     }
+ }
