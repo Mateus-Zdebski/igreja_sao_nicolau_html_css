@@ -552,26 +552,26 @@
                 autoplay: true,
                 autoplayTimeout: 7000,
                 autoplayHoverPause: true,
-                responsive: {
-                    430: { // Telas menores (mobile)
-                        items: 1,
-                        loop: false, // Desativar loop no mobile para evitar problemas com clones e centralização
-                        stagePadding: 10, // Pequeno padding para ver "pedaços" se desejado, ou 0 para item único limpo
-                        margin: 5
-                    },
-                    768: { // Telas médias (tablet)
-                        items: 2,
-                        loop: true, // Reativar loop para tablet
-                        margin: 15,
-                        stagePadding: 0 // Ou um valor se quiser prévia
-                    },
-                    992: { // Telas grandes (desktop)
-                        items: 3,
-                        loop: true, // Reativar loop para desktop
-                        margin: 20,
-                        stagePadding: 0 // Ou um valor se quiser prévia
-                    }
-                }
+              responsive: {
+    0: { // Telas menores (mobile)
+        items: 1,
+        loop: false,
+        stagePadding: 0, // Remova o padding
+        margin: 10
+    },
+    768: { // Telas médias (tablet)
+        items: 2,
+        loop: true,
+        margin: 15,
+        stagePadding: 0
+    },
+    992: { // Telas grandes (desktop)
+        items: 3,
+        loop: true,
+        margin: 20,
+        stagePadding: 0
+    }
+}
             });
             
             // Animation on scroll
