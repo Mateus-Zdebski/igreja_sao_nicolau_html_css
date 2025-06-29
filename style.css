@@ -582,12 +582,39 @@
      }
  }
 /*
-@media (max-width: 767px) { // Comentando esta regra para evitar conflito
-    .owl-stage-outer {
-        padding: 0 !important;
+* CSS adicional para forçar 1 item no mobile */
+@media (max-width: 767px) {
+    .owl-carousel .owl-stage {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
-    .owl-item {
-        padding: 0 !important;
+    
+    .owl-carousel .owl-item {
+        width: 100% !important;
+        margin-right: 0 !important;
+    }
+    
+    .owl-carousel .owl-stage-outer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    /* Garantir que os cards ocupem toda a largura no mobile */
+    .priest-card,
+    .community-card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
     }
 }
-*/
+
+/* Alternativa: Se preferir esconder o overflow */
+@media (max-width: 767px) {
+    .owl-carousel {
+        overflow: hidden;
+    }
+    
+    .owl-stage-outer {
+        overflow: hidden;
+    }
+}
