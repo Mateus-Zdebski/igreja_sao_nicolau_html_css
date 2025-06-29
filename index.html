@@ -546,25 +546,27 @@
             // Initialize carousels
        // Versão alternativa com mais controle de breakpoints:
 $('.owl-carousel').owlCarousel({
+    loop: true,
+    margin: 20,
     nav: true,
     dots: false,
-    loop: true, // Mantém loop ativado em todos os tamanhos
-    margin: 15,
     autoplay: true,
-    autoplayTimeout: 7000,
+    autoplayTimeout: 5000,
     autoplayHoverPause: true,
     responsive: {
-        0: { // Telas menores (mobile)
+        0: {
             items: 1,
-            stagePadding: 0, // Remove padding para melhor visualização
+            stagePadding: 0,
             margin: 10
         },
-        768: { // Telas médias (tablet)
+        600: {
             items: 2,
+            stagePadding: 0,
             margin: 15
         },
-        992: { // Telas grandes (desktop)
+        992: {
             items: 3,
+            stagePadding: 0,
             margin: 20
         }
     }
