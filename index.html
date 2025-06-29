@@ -544,35 +544,50 @@
             });
             
             // Initialize carousels
-             $('.owl-carousel').owlCarousel({
-                nav: true,
-                dots: false,
-                loop: true, // Ativar loop para comportamento padrão
-                margin: 15, // Margem padrão
-                autoplay: true,
-                autoplayTimeout: 7000,
-                autoplayHoverPause: true,
-              responsive: {
-    0: { // Telas menores (mobile)
-        items: 1,
-        loop: false,
-        stagePadding: 0, // Remova o padding
-        margin: 10
-    },
-    768: { // Telas médias (tablet)
-        items: 2,
-        loop: true,
-        margin: 15,
-        stagePadding: 0
-    },
-    992: { // Telas grandes (desktop)
-        items: 3,
-        loop: true,
-        margin: 20,
-        stagePadding: 0
+       // Versão alternativa com mais controle de breakpoints:
+$('.owl-carousel').owlCarousel({
+    nav: true,
+    dots: false,
+    loop: true,
+    margin: 15,
+    autoplay: true,
+    autoplayTimeout: 7000,
+    autoplayHoverPause: true,
+    responsive: {
+        0: {     // 0px até 575px (mobile pequeno)
+            items: 1,
+            loop: false,
+            stagePadding: 0,
+            margin: 10,
+            nav: true,
+            dots: true
+        },
+        576: {   // 576px até 767px (mobile grande)
+            items: 1,
+            loop: false,
+            stagePadding: 0,
+            margin: 10,
+            nav: true,
+            dots: true
+        },
+        768: {   // 768px até 991px (tablet)
+            items: 2,
+            loop: true,
+            margin: 15,
+            stagePadding: 0,
+            nav: true,
+            dots: false
+        },
+        992: {   // 992px ou mais (desktop)
+            items: 3,
+            loop: true,
+            margin: 20,
+            stagePadding: 0,
+            nav: true,
+            dots: false
+        }
     }
-}
-            });
+});
             
             // Animation on scroll
             $(window).scroll(function() {
