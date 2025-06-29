@@ -375,15 +375,13 @@
  }
 
  /* Ajuste para telas pequenas */
- @media (max-width: 767px) {
+ @media (max-width: 767.98px) { /* Ajustado para evitar sobreposição com min-width: 768px */
      .owl-stage-outer {
-         padding: 10px 20px;
-         /* Mais espaço nas laterais para mobile */
+         padding: 10px 20px !important; /* Adicionado !important para garantir precedência se necessário, mas idealmente evitar */
      }
 
      .owl-item {
-         padding: 0 5px;
-         /* Espaço entre os cards */
+         padding: 0 5px !important; /* Adicionado !important para garantir precedência */
      }
  }
 
@@ -394,8 +392,6 @@
          /* Espaço entre os cards */
      }
  }
-
-
 
  .owl-nav {
      text-align: center;
@@ -585,7 +581,8 @@
          height: 250px;
      }
  }
-@media (max-width: 767px) {
+/*
+@media (max-width: 767px) { // Comentando esta regra para evitar conflito
     .owl-stage-outer {
         padding: 0 !important;
     }
@@ -593,3 +590,4 @@
         padding: 0 !important;
     }
 }
+*/
