@@ -138,6 +138,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 .priest-card:hover {
@@ -188,6 +189,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 .community-img {
@@ -319,12 +321,17 @@ footer {
     width: 40px;
     height: 40px;
     background-color: rgba(255, 255, 255, 0.1);
-    color: #1a1a2e;
+    color: white;
     border-radius: 50%;
     text-align: center;
     line-height: 40px;
     margin-right: 10px;
     transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
 }
 
 .copyright {
@@ -337,16 +344,40 @@ footer {
 /* Owl Carousel Corrections */
 .owl-carousel {
     position: relative;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.owl-stage {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.5s ease;
 }
 
 .owl-stage-outer {
+    position: relative;
     overflow: hidden;
     padding: 10px 0;
+    width: 100%;
 }
 
 .owl-item {
-    padding: 0 5px;
+    position: relative;
+    min-height: 1px;
+    float: left;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    display: flex;
+    justify-content: center;
+    padding: 0 10px;
     box-sizing: border-box;
+}
+
+.owl-item > div {
+    width: 100%;
+    height: 100%;
 }
 
 .owl-nav {
@@ -359,8 +390,7 @@ footer {
     pointer-events: none;
 }
 
-.owl-prev, 
-.owl-next {
+.owl-prev, .owl-next {
     pointer-events: auto;
     background-color: var(--primary-color) !important;
     color: white !important;
@@ -370,28 +400,30 @@ footer {
     display: flex !important;
     align-items: center;
     justify-content: center;
-    margin: 0 10px;
+    margin: 0 15px;
+    transition: all 0.3s ease;
 }
 
-/* Mobile Specific Adjustments */
+.owl-prev:hover, .owl-next:hover {
+    background-color: var(--secondary-color) !important;
+    color: var(--dark-color) !important;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 767px) {
-    .owl-carousel .owl-item {
+    .owl-item {
         width: 100% !important;
-        padding: 0;
-    }
-    
-    .owl-stage-outer {
-        padding: 0 !important;
+        padding: 0 15px;
     }
     
     .priest-card, 
     .community-card {
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
     }
     
-    .owl-nav {
-        display: none;
+    .owl-stage-outer {
+        padding: 0;
     }
     
     .hero-title {
@@ -407,16 +439,14 @@ footer {
     }
 }
 
-/* Tablet Adjustments */
 @media (min-width: 768px) and (max-width: 991px) {
-    .owl-carousel .owl-item {
+    .owl-item {
         width: 50% !important;
     }
 }
 
-/* Desktop Adjustments */
 @media (min-width: 992px) {
-    .owl-carousel .owl-item {
+    .owl-item {
         width: 33.333% !important;
     }
 }
@@ -465,6 +495,21 @@ footer {
     font-size: 1.2rem;
 }
 
+@media (max-width: 768px) {
+    .history-block {
+        margin-bottom: 50px;
+        padding-bottom: 30px;
+    }
+
+    .history-block h3 {
+        font-size: 1.5rem;
+    }
+
+    .history-conclusion {
+        padding: 20px;
+    }
+}
+
 /* Carousel Adjustments */
 .carousel-inner {
     position: relative;
@@ -493,19 +538,6 @@ footer {
 @media (max-width: 768px) {
     .carousel-inner {
         height: 300px;
-    }
-    
-    .history-block {
-        margin-bottom: 50px;
-        padding-bottom: 30px;
-    }
-
-    .history-block h3 {
-        font-size: 1.5rem;
-    }
-
-    .history-conclusion {
-        padding: 20px;
     }
 }
 
