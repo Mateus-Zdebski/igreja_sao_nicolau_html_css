@@ -1,65 +1,530 @@
- :root {
-     --primary-color: #0057B7;
-     /* Azul ucraniano */
-     --secondary-color: #FFD700;
-     /* Amarelo ucraniano */
-     --dark-color: #1a1a2e;
-     --light-color: #f8f9fa;
-     --accent-color: #e63946;
- }
+   :root {
+            --primary-color: #0057B7;
+            --secondary-color: #FFD700;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --accent-color: #e63946;
+        }
 
- body {
-     font-family: 'Poppins', sans-serif;
-     color: var(--dark-color);
-     overflow-x: hidden;
-     background-color: #f5f5f5;
- }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-color);
+            overflow-x: hidden;
+            background-color: #f5f5f5;
+        }
 
- h1,
- h2,
- h3,
- h4,
- h5,
- h6 {
-     font-family: 'Playfair Display', serif;
-     color: var(--primary-color);
- }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+        }
 
- .navbar {
-     background-color: white;
-     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
- }
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
- .navbar-brand {
-     font-family: 'Playfair Display', serif;
-     font-weight: 700;
-     color: var(--primary-color) !important;
-     font-size: 1.8rem;
- }
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            font-size: 1.8rem;
+        }
 
- .nav-link {
-     color: var(--dark-color) !important;
-     font-weight: 500;
-     margin: 0 10px;
-     position: relative;
- }
+        .nav-link {
+            color: var(--dark-color) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+        }
 
- .nav-link:after {
-     content: '';
-     position: absolute;
-     width: 0;
-     height: 2px;
-     bottom: 0;
-     left: 0;
-     background-color: var(--secondary-color);
-     transition: width 0.3s ease;
- }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
 
- .nav-link:hover:after {
-     width: 100%;
- }
+        .nav-link:hover:after {
+            width: 100%;
+        }
 
- .hero-section {
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .priest-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+
+        .priest-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .priest-img {
+            height: 250px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+        }
+
+        .priest-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .priest-card:hover .priest-img img {
+            transform: scale(1.05);
+        }
+
+        .priest-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .priest-name {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .priest-role {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .community-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+
+        .community-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .community-img {
+            height: 180px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+        }
+
+        .community-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .community-info {
+            padding: 20px;
+        }
+
+        .community-name {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* OWL CAROUSEL FIXES - VERSÃO CORRIGIDA */
+        .owl-carousel {
+            display: block;
+            width: 100%;
+            -webkit-tap-highlight-color: transparent;
+            position: relative;
+            z-index: 1;
+        }
+
+        .owl-carousel .owl-stage {
+            position: relative;
+            -ms-touch-action: pan-Y;
+            touch-action: manipulation;
+            -moz-backface-visibility: hidden;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .owl-carousel .owl-stage-outer {
+            position: relative;
+            overflow: hidden;
+            -webkit-transform: translate3d(0px, 0px, 0px);
+        }
+
+        .owl-carousel .owl-item {
+            position: relative;
+            min-height: 1px;
+            float: left;
+            -webkit-backface-visibility: hidden;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .owl-carousel .owl-item > div {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Navegação personalizada */
+        .owl-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .owl-nav button {
+            pointer-events: auto;
+            background-color: var(--primary-color) !important;
+            color: white !important;
+            border: none !important;
+            width: 50px !important;
+            height: 50px !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 18px !important;
+            margin: 0 15px !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        .owl-nav button:hover {
+            background-color: var(--secondary-color) !important;
+            color: var(--dark-color) !important;
+            transform: scale(1.1) !important;
+        }
+
+        .owl-nav button.owl-prev {
+            left: -25px;
+        }
+
+        .owl-nav button.owl-next {
+            right: -25px;
+        }
+
+        /* Dots personalizados */
+        .owl-dots {
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        .owl-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(0, 87, 183, 0.3);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .owl-dot.active {
+            background-color: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        /* Responsividade aprimorada */
+        @media (max-width: 576px) {
+            .owl-nav button {
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 14px !important;
+                margin: 0 5px !important;
+            }
+            
+            .owl-nav button.owl-prev {
+                left: -20px;
+            }
+
+            .owl-nav button.owl-next {
+                right: -20px;
+            }
+            
+            .priest-img {
+                height: 200px;
+            }
+            
+            .priest-name {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .priest-img {
+                height: 220px;
+            }
+            
+            .community-img {
+                height: 150px;
+            }
+        }
+
+        /* Seções de exemplo */
+        .py-5 {
+            padding: 3rem 0;
+        }
+
+        .bg-light {
+            background-color: #f8f9fa;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-5 {
+            margin-bottom: 3rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+    /* ESTILOS ESPECÍFICOS PARA PÁGINA DE HISTÓRIA */
+
+.history-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.history-block {
+    margin-bottom: 80px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.history-block:last-child {
+    border-bottom: none;
+}
+
+.history-block h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.history-block p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.history-conclusion {
+    background-color: rgba(0, 87, 183, 0.05);
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 60px;
+}
+
+.history-conclusion h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.history-conclusion p {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* ESTILOS PARA CARROSSÉIS DE IMAGENS */
+.carousel-container {
+    margin-bottom: 30px;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    max-height: 500px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: initial; /* Mantém proporções cobrindo todo o espaço */
+    object-position: center; /* Centraliza a imagem */
+    transition: transform 0.5s ease;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+    background-color: var(--secondary-color);
+}
+
+.carousel-control-prev {
+    left: 15px;
+}
+
+.carousel-control-next {
+    right: 15px;
+}
+
+/* LISTA DE PADRES */
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.list-unstyled li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.list-unstyled i {
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+/* BOTÃO VOLTAR */
+.back-to-home {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.back-to-home .btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 992px) {
+    .history-block {
+        margin-bottom: 60px;
+        padding-bottom: 30px;
+    }
+    
+    .carousel-inner {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .history-block {
+        margin-bottom: 50px;
+        padding-bottom: 20px;
+    }
+    
+    .history-block h3 {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-inner {
+        height: 300px;
+    }
+    
+    .history-conclusion {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-inner {
+        height: 250px;
+    }
+    
+    .history-block p {
+        font-size: 1rem;
+    }
+    
+    .history-conclusion {
+        padding: 20px;
+    }
+    
+    .history-conclusion p {
+        font-size: 1.1rem;
+    }
+    
+    .back-to-home .btn {
+        width: 100%;
+    }
+}
+
+/* ANIMAÇÕES */
+.animate__animated {
+    opacity: 0;
+}
+
+.animate__fadeIn {
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero-section {
      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imagens/isn/Imagem\ do\ WhatsApp\ de\ 2025-06-26\ à\(s\)\ 12.52.31_c4b80664.jpg');
      background-size: cover;
      background-position: center;
@@ -116,184 +581,7 @@
      transform: translateY(-3px);
  }
 
- .section-title {
-     position: relative;
-     margin-bottom: 50px;
-     text-align: center;
- }
-
- .section-title:after {
-     content: '';
-     position: absolute;
-     width: 80px;
-     height: 3px;
-     background-color: var(--secondary-color);
-     bottom: -15px;
-     left: 50%;
-     transform: translateX(-50%);
- }
-
- .about-section {
-     padding: 100px 0;
-     background-color: white;
- }
-
- .priest-card {
-     background-color: white;
-     border-radius: 10px;
-     overflow: hidden;
-     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-     transition: all 0.3s ease;
-     margin-bottom: 30px;
- }
-
- .priest-card:hover {
-     transform: translateY(-10px);
-     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
- }
-
- .priest-img {
-     height: 250px;
-     /* Altura reduzida para melhor ajuste */
-     overflow: hidden;
-     display: flex;
-     /* Para centralizar a imagem com object-fit: contain */
-     align-items: center;
-     /* Para centralizar a imagem com object-fit: contain */
-     justify-content: center;
-     /* Para centralizar a imagem com object-fit: contain */
-     background-color: #f0f0f0;
-     /* Cor de fundo caso a imagem não preencha tudo */
- }
-
- .priest-img img {
-     width: 100%;
-     height: 100%;
-     object-fit: contain;
-     /* Imagem inteira visível, mantendo proporção */
-     transition: transform 0.5s ease;
- }
-
- .priest-card:hover .priest-img img {
-     transform: scale(1.05);
-     /* Reduzido o efeito de zoom para contain */
- }
-
- .priest-info {
-     padding: 20px;
-     text-align: center;
- }
-
- .priest-name {
-     font-size: 1.5rem;
-     margin-bottom: 5px;
- }
-
- .priest-role {
-     color: var(--secondary-color);
-     font-weight: 500;
-     margin-bottom: 15px;
- }
-
- .community-card {
-     background-color: white;
-     border-radius: 10px;
-     overflow: hidden;
-     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-     transition: all 0.3s ease;
-     margin-bottom: 30px;
- }
-
- .community-img {
-     height: 180px;
-     /* Altura reduzida para melhor ajuste */
-     overflow: hidden;
-     display: flex;
-     /* Para centralizar a imagem com object-fit: contain */
-     align-items: center;
-     /* Para centralizar a imagem com object-fit: contain */
-     justify-content: center;
-     /* Para centralizar a imagem com object-fit: contain */
-     background-color: #f0f0f0;
-     /* Cor de fundo caso a imagem não preencha tudo */
- }
-
- .community-img img {
-     width: 100%;
-     height: 100%;
-     object-fit: contain;
-     /* Imagem inteira visível, mantendo proporção */
- }
-
- .community-info {
-     padding: 20px;
- }
-
- .community-name {
-     font-size: 1.3rem;
-     margin-bottom: 10px;
- }
-
- .donor-card {
-     background-color: white;
-     border-radius: 10px;
-     padding: 30px;
-     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-     text-align: center;
-     margin-bottom: 30px;
-     height: 100%;
- }
-
- .donor-icon {
-     font-size: 3rem;
-     color: var(--secondary-color);
-     margin-bottom: 20px;
- }
-
- .donor-name {
-     font-size: 1.3rem;
-     margin-bottom: 10px;
- }
-
- .mass-times {
-     background-color: var(--primary-color);
-     color: white;
-     padding: 50px 0;
- }
-
- .mass-times .section-title {
-     color: white;
- }
-
- .mass-times .section-title:after {
-     background-color: var(--secondary-color);
- }
-
- .mass-time-card {
-     background-color: rgba(255, 255, 255, 0.1);
-     border-radius: 10px;
-     padding: 30px;
-     text-align: center;
-     margin-bottom: 30px;
-     transition: all 0.3s ease;
- }
-
- .mass-time-card:hover {
-     background-color: rgba(255, 255, 255, 0.2);
-     transform: translateY(-5px);
- }
-
- .mass-day {
-     font-size: 1.5rem;
-     margin-bottom: 15px;
-     color: var(--secondary-color);
- }
-
- .mass-hours {
-     font-size: 1.2rem;
- }
-
- footer {
+  footer {
      background-color: var(--dark-color);
      color: white;
      padding: 70px 0 20px;
@@ -354,234 +642,4 @@
      padding-top: 20px;
      margin-top: 50px;
      text-align: center;
- }
-
- /* Owl Carousel - Ajustes gerais */
- .owl-carousel {
-     position: relative;
- }
-
- .owl-stage-outer {
-     padding: 10px 0;
-     /* Espaço para os cards não serem cortados */
- }
-
- /* Cards - Ajuste de tamanho */
- .priest-card,
- .community-card {
-     width: 100%;
-     margin: 0 auto;
-     transition: transform 0.3s ease, box-shadow 0.3s ease;
- }
-
- /* Ajuste para telas pequenas */
- @media (max-width: 767px) {
-     .owl-stage-outer {
-         padding: 10px 20px;
-         /* Mais espaço nas laterais para mobile */
-     }
-
-     .owl-item {
-         padding: 0 5px;
-         /* Espaço entre os cards */
-     }
- }
-
- /* Ajuste para telas médias/grandes */
- @media (min-width: 768px) {
-     .owl-item {
-         padding: 0 15px;
-         /* Espaço entre os cards */
-     }
- }
-
-
-
- .owl-nav {
-     text-align: center;
-     margin-top: 20px;
- }
-
- .owl-nav button {
-     background-color: var(--primary-color) !important;
-     color: white !important;
-     width: 40px;
-     height: 40px;
-     border-radius: 50% !important;
-     margin: 0 10px;
-     transition: all 0.3s ease;
- }
-
- .owl-nav button:hover {
-     background-color: var(--secondary-color) !important;
-     color: var(--dark-color) !important;
- }
-
- @media (max-width: 768px) {
-     .hero-title {
-         font-size: 2.5rem;
-     }
-
-     .hero-subtitle {
-         font-size: 1rem;
-     }
-
-     .navbar-brand {
-         font-size: 1.5rem;
-     }
- }
-
- /* História Page Styles */
- .history-content {
-     max-width: 1200px;
-     margin: 0 auto;
- }
-
- .history-block {
-     margin-bottom: 80px;
-     padding-bottom: 40px;
-     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
- }
-
- .history-block:last-child {
-     border-bottom: none;
- }
-
- .history-block h3 {
-     color: var(--primary-color);
-     margin-bottom: 20px;
-     font-size: 1.8rem;
- }
-
- .history-block p {
-     font-size: 1.1rem;
-     line-height: 1.8;
-     margin-bottom: 20px;
- }
-
- .history-conclusion {
-     background-color: rgba(0, 87, 183, 0.05);
-     padding: 40px;
-     border-radius: 10px;
-     margin-top: 60px;
- }
-
- .history-conclusion h3 {
-     color: var(--primary-color);
-     margin-bottom: 20px;
- }
-
- .history-conclusion p {
-     font-size: 1.2rem;
- }
-
- /* Owl Carousel Adjustments */
- .owl-carousel .item img {
-     border-radius: 8px;
-     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
- }
-
- .owl-nav {
-     position: absolute;
-     top: 50%;
-     left: 0;
-     /* Faz o .owl-nav ocupar toda a largura */
-     right: 0;
-     /* Faz o .owl-nav ocupar toda a largura */
-     transform: translateY(-50%);
-     padding: 0 5px;
-     /* Pequeno padding para não colar os botões nas bordas extremas */
-     box-sizing: border-box;
-     pointer-events: none;
-     /* Para o .owl-nav não interferir com cliques nos itens abaixo */
- }
-
- .owl-prev,
- .owl-next {
-     background-color: var(--primary-color) !important;
-     color: white !important;
-     width: 40px;
-     height: 40px;
-     border-radius: 50% !important;
-     display: flex !important;
-     align-items: center;
-     justify-content: center;
-     position: absolute;
-     /* Posicionamento absoluto dentro do .owl-nav */
-     top: 0;
-     /* Alinhado ao topo do .owl-nav (que já está centralizado verticalmente) */
-     pointer-events: auto;
-     /* Habilitar cliques nos botões */
-     z-index: 10;
-     /* Para garantir que fiquem acima dos itens do carrossel */
- }
-
- .owl-prev {
-     left: 5px;
-     /* Distância da borda esquerda do .owl-nav */
- }
-
- .owl-next {
-     right: 5px;
-     /* Distância da borda direita do .owl-nav */
- }
-
- /* A media query @media (max-width: 767.98px) para .owl-nav, .owl-prev, .owl-next foi removida
-   pois a configuração acima já deve ser suficientemente responsiva para telas pequenas.
-   Se precisar de ajustes específicos para telas menores, ela pode ser reintroduzida. */
-
- @media (max-width: 768px) {
-     .history-block {
-         margin-bottom: 50px;
-         padding-bottom: 30px;
-     }
-
-     .history-block h3 {
-         font-size: 1.5rem;
-     }
-
-     .history-conclusion {
-         padding: 20px;
-     }
- }
-
- /* Estilos corrigidos para os carrosséis */
- .carousel-inner {
-     position: relative;
-     width: 100%;
-     height: 400px;
-     /* Mantido para consistência, mas pode ser ajustado */
-     max-height: 500px;
-     /* Adicionado max-height */
-     overflow: hidden;
-     border-radius: 12px;
-     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
- }
-
- .carousel-item {
-     position: relative;
-     width: 100%;
-     height: 100%;
- }
-
- .carousel-item img {
-     width: 100%;
-     height: 100%;
-     object-fit: contain;
-     /* Alterado de cover para contain */
-     object-position: center;
-     border-radius: 12px;
- }
-
- /* Responsividade */
- @media (max-width: 768px) {
-     .carousel-inner {
-         height: 300px;
-     }
- }
-
- @media (max-width: 576px) {
-     .carousel-inner {
-         height: 250px;
-     }
  }
