@@ -689,3 +689,118 @@ footer {
     transform: translateY(-3px);
 }
 
+/* Mass Times Section */
+.mass-times {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 80px 0;
+    position: relative;
+}
+
+.mass-times .container {
+    position: relative;
+    z-index: 2;
+}
+
+.mass-times .section-title {
+    color: white;
+    margin-bottom: 30px;
+}
+
+.mass-times .section-title:after {
+    background-color: var(--secondary-color);
+}
+
+.mass-times p.text-center {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+.mass-time-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+}
+
+.mass-time-card:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.mass-day {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.mass-day:after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background-color: var(--secondary-color);
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mass-hours {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .mass-times {
+        padding: 60px 0;
+    }
+    
+    .mass-time-card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .mass-times {
+        padding: 50px 0;
+    }
+    
+    .mass-time-card {
+        margin-bottom: 20px;
+    }
+    
+    .mass-day {
+        font-size: 1.3rem;
+    }
+    
+    .mass-hours {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .mass-times {
+        padding: 40px 0;
+    }
+    
+    .mass-time-card {
+        padding: 20px;
+    }
+    
+    .mass-day {
+        font-size: 1.2rem;
+    }
+}
