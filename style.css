@@ -11,6 +11,7 @@ body {
     color: var(--dark-color);
     overflow-x: hidden;
     background-color: #f5f5f5;
+    padding-top: 80px; /* Espaço para a navbar fixa */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -18,144 +19,22 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color);
 }
 
-/* ESTILOS PARA O CARROSSEL */
-.owl-carousel {
-    display: block;
-    width: 100%;
-    -webkit-tap-highlight-color: transparent;
-    position: relative;
-    z-index: 1;
-}
-
-/* Garantir que os itens sejam visíveis antes da inicialização */
-.owl-carousel .owl-stage {
-    display: flex;
-    align-items: stretch;
-}
-
-.owl-carousel .owl-item {
-    min-height: 1px;
-    display: flex;
-    align-items: stretch;
-}
-
-/* Remover a opacidade inicial que estava escondendo os cards */
-.priest-card, 
-.community-card {
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    margin-bottom: 30px;
-    height: 100%;
-    /* REMOVI: opacity: 0 e animation */
-}
-
-/* Estilos para as imagens dentro dos cards */
-.priest-img, .community-img {
-    height: 250px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f0f0f0;
-}
-
-.priest-img img, .community-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-/* Efeitos hover */
-.priest-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.priest-card:hover .priest-img img {
-    transform: scale(1.05);
-}
-
-.community-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* Conteúdo dos cards */
-.priest-info, .community-info {
-    padding: 20px;
-    text-align: center;
-}
-
-.priest-name, .community-name {
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-    color: var(--primary-color);
-}
-
-.priest-role {
-    color: var(--secondary-color);
-    font-weight: 500;
-    margin-bottom: 15px;
-}
-@keyframes fadeIn {
-    to { opacity: 1; }
-}
-
-.priest-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.community-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.priest-img, .community-img {
-    height: 250px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f0f0f0;
-}
-
-.priest-img img, .community-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.priest-card:hover .priest-img img {
-    transform: scale(1.05);
-}
-
-.priest-info, .community-info {
-    padding: 20px;
-    text-align: center;
-}
-
-.priest-name, .community-name {
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-    color: var(--primary-color);
-}
-
-.priest-role {
-    color: var(--secondary-color);
-    font-weight: 500;
-    margin-bottom: 15px;
-}
-
-/* Restante do seu CSS existente... */
+/* NAVBAR CORRIGIDA */
 .navbar {
     background-color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.navbar.scrolled {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
@@ -187,6 +66,207 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
+/* CARROSSEL CORRIGIDO */
+.owl-carousel {
+    display: none;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.owl-carousel.owl-loaded {
+    display: block;
+}
+
+.owl-stage {
+    display: flex;
+    align-items: stretch;
+}
+
+.owl-item {
+    min-height: 1px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.owl-item > div {
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.priest-card, .community-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.priest-img, .community-img {
+    height: 250px; /* Altura fixa para consistência */
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    background-color: #f0f0f0;
+    position: relative;
+}
+.priest-img img, .community-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Mantém proporção SEM cortar */
+    object-position: center; /* Centraliza a imagem */
+    transition: transform 0.5s ease;
+}
+.priest-info, .community-info {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.priest-name, .community-name {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.priest-role {
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* Estilo para os botões de navegação */
+.owl-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none; /* Permite clicar através do container */
+}
+
+.owl-carousel .owl-nav button {
+    pointer-events: all; /* Habilita cliques nos botões */
+    width: 40px;
+    height: 40px;
+    border-radius: 50% !important;
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    font-size: 20px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+}
+
+.owl-carousel .owl-nav button:hover {
+    background-color: var(--secondary-color) !important;
+    color: var(--dark-color) !important;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.owl-carousel .owl-nav button span {
+    display: none; /* Esconde o texto padrão */
+}
+
+.owl-carousel .owl-nav button:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.owl-carousel .owl-nav button.owl-prev:before {
+    content: "\f104"; /* Ícone de seta esquerda do Font Awesome */
+}
+
+.owl-carousel .owl-nav button.owl-next:before {
+    content: "\f105"; /* Ícone de seta direita do Font Awesome */
+}
+
+/* Estilo para os dots de navegação */
+.owl-carousel .owl-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.owl-carousel .owl-dots button.owl-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc !important;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+.owl-carousel .owl-dots button.owl-dot.active {
+    background-color: var(--primary-color) !important;
+    transform: scale(1.2);
+}
+
+.owl-carousel .owl-dots button.owl-dot:hover {
+    background-color: var(--secondary-color) !important;
+}
+/* Efeitos hover */
+.priest-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.priest-card:hover .priest-img img {
+    transform: scale(1.05);
+}
+
+.community-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* LOADER */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Restante do seu CSS existente... */
 .section-title {
     position: relative;
     margin-bottom: 50px;
@@ -204,63 +284,102 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateX(-50%);
 }
 
-/* Responsividade aprimorada */
-@media (max-width: 576px) {
-    .owl-nav button {
-        width: 40px !important;
-        height: 40px !important;
-        font-size: 14px !important;
-        margin: 0 5px !important;
-    }
-    
-    .owl-nav button.owl-prev {
-        left: -20px;
-    }
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imagens/isn/Imagem\ do\ WhatsApp\ de\ 2025-06-26\ à\(s\)\ 12.52.31_c4b80664.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: -80px; /* Compensa a navbar fixa */
+    padding-top: 80px; /* Compensa a navbar fixa */
+}
 
-    .owl-nav button.owl-next {
-        right: -20px;
-    }
-    
+/* Responsividade */
+@media (max-width: 768px) {
     .priest-img, .community-img {
         height: 200px;
     }
     
-    .priest-name, .community-name {
-        font-size: 1.1rem;
+    .hero-section {
+        height: 60vh;
     }
 }
 
-@media (max-width: 768px) {
-    .priest-img {
-        height: 220px;
+@media (max-width: 576px) {
+    .priest-img, .community-img {
+        height: 180px;
     }
     
-    .community-img {
-        height: 150px;
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section {
+        height: 50vh;
     }
 }
 
-/* Seções de exemplo */
-.py-5 {
-    padding: 3rem 0;
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 70px 0 20px;
 }
 
-.bg-light {
-    background-color: #f8f9fa;
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
+    display: inline-block;
 }
 
-.text-center {
+.footer-links h4 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+    padding-left: 5px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #1a1a2e;
+    border-radius: 50%;
     text-align: center;
+    line-height: 40px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
 }
 
-.mb-5 {
-    margin-bottom: 3rem;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 50px;
+    text-align: center;
 }
 
 /* ESTILOS ESPECÍFICOS PARA PÁGINA DE HISTÓRIA */
@@ -336,11 +455,10 @@ h1, h2, h3, h4, h5, h6 {
 .carousel-item img {
     width: 100%;
     height: 100%;
-    object-fit: initial;
+    object-fit: contain; /* ou cover */
     object-position: center;
     transition: transform 0.5s ease;
 }
-
 .carousel-control-prev,
 .carousel-control-next {
     width: 40px;
@@ -448,6 +566,72 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* BOTÃO VOLTAR */
+.back-to-home {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.back-to-home .btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 992px) {
+    .history-block {
+        margin-bottom: 60px;
+        padding-bottom: 30px;
+    }
+    
+    .carousel-inner {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .history-block {
+        margin-bottom: 50px;
+        padding-bottom: 20px;
+    }
+    
+    .history-block h3 {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-inner {
+        height: 300px;
+    }
+    
+    .history-conclusion {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-inner {
+        height: 250px;
+    }
+    
+    .history-block p {
+        font-size: 1rem;
+    }
+    
+    .history-conclusion {
+        padding: 20px;
+    }
+    
+    .history-conclusion p {
+        font-size: 1.1rem;
+    }
+    
+    .back-to-home .btn {
+        width: 100%;
+    }
+
+    /* Tentativa anterior de forçar um item por slide removida para evitar card muito grande */
+}
+
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imagens/isn/Imagem\ do\ WhatsApp\ de\ 2025-06-26\ à\(s\)\ 12.52.31_c4b80664.jpg');
     background-size: cover;
@@ -505,63 +689,3 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-3px);
 }
 
-footer {
-    background-color: var(--dark-color);
-    color: white;
-    padding: 70px 0 20px;
-}
-
-.footer-logo {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 2rem;
-    color: white;
-    margin-bottom: 20px;
-    display: inline-block;
-}
-
-.footer-links h4 {
-    color: var(--secondary-color);
-    margin-bottom: 20px;
-    font-size: 1.3rem;
-}
-
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li {
-    margin-bottom: 10px;
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: var(--secondary-color);
-    padding-left: 5px;
-}
-
-.social-icons a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #1a1a2e;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    margin-right: 10px;
-    transition: all 0.3s ease;
-}
-
-.copyright {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-    margin-top: 50px;
-    text-align: center;
-}
