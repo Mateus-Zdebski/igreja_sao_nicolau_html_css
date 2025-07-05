@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // Mostra o loader
-    $('body').prepend('<div class="loading"><div class="loading-spinner"></div></div>');
+ 
     
     // Esconde o loader quando tudo estiver carregado
     $(window).on('load', function() {
